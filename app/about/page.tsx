@@ -3,240 +3,199 @@ import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Mail, Phone } from 'lucide-react'
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-black">
       <Header />
 
       <main>
         {/* Hero Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20 border-b border-gray-800">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-                  About Araceli Entertainment
-                </h1>
-                <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                  Welcome to Araceli Entertainment, where dreams are born and possibilities are endless. We are a full-service production and streaming platform dedicated to bringing you quality entertainment at affordable prices.
+        <section className="px-4 sm:px-6 lg:px-8 py-32 text-center space-y-8 relative overflow-hidden">
+           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.05)_0%,_transparent_70%)] pointer-events-none" />
+
+           <div className="max-w-4xl mx-auto space-y-6 relative z-10">
+              <p className="text-gold text-[10px] font-black tracking-[0.3em] uppercase">
+                Our Story
+              </p>
+              <h1 className="text-6xl sm:text-7xl font-serif text-white">
+                More Than a <span className="italic-gold">Streaming Platform.</span>
+              </h1>
+              <p className="text-gray-500 text-lg sm:text-xl font-light max-w-2xl mx-auto leading-relaxed">
+                Araceli Entertainment is a movement — built on the belief that extraordinary
+                storytelling should be accessible to everyone.
+              </p>
+           </div>
+        </section>
+
+        {/* Who We Are Section */}
+        <section className="px-4 sm:px-6 lg:px-8 py-24 bg-white/[0.01]">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
+            {/* Left side: Graphic/Image stack */}
+            <div className="relative">
+              <div className="aspect-square bg-purple-900/30 rounded-sm relative overflow-hidden border border-white/5 shadow-2xl">
+                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/40 to-transparent" />
+                 <div className="absolute inset-0 flex items-center justify-center">
+                   <div className="w-32 h-32 bg-black/40 backdrop-blur-xl border border-white/10 p-4 rounded-sm shadow-2xl flex items-center justify-center">
+                      <Image
+                        src="/placeholder-logo.svg"
+                        alt="Araceli"
+                        width={100}
+                        height={100}
+                        className="opacity-80"
+                      />
+                   </div>
+                 </div>
+              </div>
+              <div className="absolute -bottom-12 -right-12 w-1/2 aspect-square bg-gold/5 backdrop-blur-sm border border-gold/20 rounded-sm p-8 flex flex-col justify-end shadow-2xl">
+                 <p className="text-gold font-serif text-4xl">Est.</p>
+                 <p className="text-gold font-serif text-6xl font-bold">2024</p>
+                 <p className="text-[10px] text-gold font-black tracking-widest uppercase mt-2">Steger, Illinois</p>
+              </div>
+            </div>
+
+            {/* Right side: Content */}
+            <div className="space-y-12">
+              <div className="space-y-4">
+                <p className="text-gold text-[10px] font-black tracking-[0.3em] uppercase flex items-center gap-4">
+                  <span className="h-[1px] w-8 bg-gold" />
+                  Who We Are
                 </p>
-                <p className="text-lg text-gold italic font-light mb-8">
-                  "Birth your dreams. Dreams are ordained to be."
+                <h2 className="text-5xl font-serif text-white leading-tight">
+                  A Full-Service <span className="italic-gold">Production & Streaming</span> Company
+                </h2>
+              </div>
+
+              <div className="space-y-6 text-gray-400 text-base font-light leading-relaxed">
+                <p>
+                  Araceli Entertainment is not just a streaming platform — we are a full-service production house.
+                  We create feature films, blockbuster content, and original series, then deliver them directly
+                  to audiences at a price that's truly competitive.
+                </p>
+                <p>
+                  We believe the major players have priced out the everyday viewer. We built Araceli to change
+                  that — offering subscription, ad-supported, and completely free Freemium tiers so that no
+                  one gets left behind.
                 </p>
               </div>
-              <div className="relative h-96 rounded-lg overflow-hidden border border-gold/30">
-                <Image
-                  src="https://images.unsplash.com/photo-1535016120754-30d87a42ad2b?w=600&h=400&fit=crop"
-                  alt="Araceli Entertainment Studio"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Mission & Vision */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20 bg-brand-darker border-b border-gray-800">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">
-              Our Mission & Vision
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 hover:border-gold transition-colors">
-                <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-brand-dark font-bold text-xl">🎯</span>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  To revolutionize the streaming entertainment industry by providing premium quality content and production services at truly affordable prices. We believe everyone deserves access to exceptional entertainment without breaking the bank.
+              {/* Founder Quote */}
+              <div className="p-10 bg-gold/5 border-l-2 border-gold rounded-sm space-y-4">
+                <p className="text-white font-serif italic text-xl leading-relaxed">
+                  "Birth your dreams. Dreams are ordained to be. Trust your pathway. Your tomorrow is built
+                  upon the preparation of today."
+                </p>
+                <p className="text-gold text-[10px] font-black tracking-[0.2em] uppercase">
+                  — Dr. Kevin McLemore, Founder
                 </p>
               </div>
-              <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 hover:border-gold transition-colors">
-                <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-brand-dark font-bold text-xl">✨</span>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  To become the most trusted and accessible streaming platform globally, offering diverse, high-quality content that inspires, entertains, and brings families together through flexible subscription options.
-                </p>
+
+              <p className="text-gray-500 text-sm font-light italic">
+                From the streets of Steger, Illinois to screens across the nation — Araceli is proof that
+                vision, preparation, and conviction can build something that lasts.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Features/Values Cards */}
+        <section className="px-4 sm:px-6 lg:px-8 py-32">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            {[
+              { id: '01', title: 'ACCESSIBILITY FIRST', desc: 'Three-tier pricing — including a completely free option — because great content shouldn\'t have a gatekeeping price tag.' },
+              { id: '02', title: 'ORIGINAL VISION', desc: 'We don\'t just license content — we create it. Every feature film and original series is produced in-house from the ground up.' },
+              { id: '03', title: 'DREAMS ORDAINED', desc: 'Araceli is built on the philosophy that your pathway is worth trusting. We champion stories that reflect that truth.' },
+            ].map((card) => (
+              <div key={card.id} className="p-10 bg-white/[0.02] border border-white/5 hover:border-gold/20 transition-all group space-y-6 rounded-sm">
+                <p className="text-gold font-serif text-4xl opacity-40 group-hover:opacity-100 transition-opacity">{card.id}</p>
+                <h3 className="text-white text-[10px] font-black tracking-[0.2em] uppercase">{card.title}</h3>
+                <p className="text-gray-500 text-sm font-light leading-relaxed">{card.desc}</p>
               </div>
-            </div>
+            ))}
           </div>
         </section>
 
-        {/* What We Offer */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20 border-b border-gray-800">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">
-              What We Offer
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Feature Films',
-                  description: 'A curated selection of blockbuster films from emerging and established filmmakers.',
-                  icon: '🎬',
-                },
-                {
-                  title: 'Premium Series',
-                  description: 'Original and exclusive streaming content that rivals the biggest entertainment companies.',
-                  icon: '📺',
-                },
-                {
-                  title: 'Flexible Plans',
-                  description: 'Choose between ad-free premium, ad-supported standard, or free freemium with scheduled programming.',
-                  icon: '💳',
-                },
-              ].map((item, index) => (
-                <div key={index} className="bg-gray-900 border border-gray-800 rounded-lg p-8 hover:border-gold transition-colors">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-gray-300">{item.description}</p>
+        {/* Meet the Founder Section */}
+        <section className="px-4 sm:px-6 lg:px-8 py-32 bg-white/[0.01] border-t border-white/5">
+          <div className="max-w-7xl mx-auto">
+             <div className="space-y-4 mb-20">
+                <p className="text-gold text-[10px] font-black tracking-[0.3em] uppercase">Leadership</p>
+                <h2 className="text-5xl font-serif text-white">
+                  Meet the <span className="italic-gold">Founder</span>
+                </h2>
+             </div>
+
+             <div className="grid lg:grid-cols-12 gap-16 items-start">
+                <div className="lg:col-span-4 space-y-8">
+                   <div className="aspect-[4/5] bg-brand-dark border border-white/5 rounded-sm p-12 flex flex-col items-center justify-center text-center space-y-6 shadow-2xl relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent pointer-events-none" />
+                      <div className="w-24 h-24 rounded-full border-2 border-gold flex items-center justify-center text-gold font-serif text-3xl font-bold">
+                        KM
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-white text-xl font-bold tracking-tight">Dr. Kevin McLemore</h3>
+                        <p className="text-gold text-[10px] font-black tracking-widest uppercase">Founder & CEO</p>
+                      </div>
+                      <div className="space-y-2 pt-4">
+                        <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">Kmhomerglen@gmail.com</p>
+                        <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">(708) 982-8863</p>
+                        <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">630-994-0265</p>
+                        <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">Steger, Illinois</p>
+                      </div>
+                   </div>
+                   <div className="flex gap-4">
+                      <Button variant="outline" className="flex-1 border-white/10 text-white hover:bg-white/5 text-[10px] font-black tracking-widest uppercase h-14">
+                        Connect on Facebook →
+                      </Button>
+                      <Button className="flex-1 bg-gold text-black hover:bg-gold-dark text-[10px] font-black tracking-widest uppercase h-14">
+                        Join Araceli
+                      </Button>
+                   </div>
                 </div>
-              ))}
-            </div>
+
+                <div className="lg:col-span-8 space-y-10 text-gray-400 font-light text-lg leading-relaxed">
+                   <p>
+                    Dr. Kevin McLemore is the visionary founder behind Araceli Entertainment — a full-service production
+                    and streaming company born from the conviction that powerful storytelling should reach everyone,
+                    not just those who can afford premium subscriptions.
+                   </p>
+                   <p>
+                    Rooted in Steger, Illinois, Dr. McLemore built Araceli on the philosophy that dreams are not
+                    accidents — they are ordained. With a background spanning film production, content strategy,
+                    and media distribution, he is personally invested in every frame of content that carries
+                    the Araceli name.
+                   </p>
+                   <p>
+                    "Your tomorrow is built upon the preparation of today." That principle guides every decision
+                    at Araceli — from the stories we choose to the price points we set.
+                   </p>
+                </div>
+             </div>
           </div>
         </section>
 
-        {/* Dr. Kevin McLemore Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20 bg-brand-darker border-b border-gray-800">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">
-              Founder & Vision Leader
-            </h2>
-            <div className="bg-gradient-to-r from-gold/10 to-gold/5 border border-gold/30 rounded-xl p-12">
-              <div className="grid md:grid-cols-3 gap-8 items-center">
-                <div className="md:col-span-1">
-                  <div className="relative w-full aspect-square rounded-lg overflow-hidden border border-gold/30">
-                    <Image
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
-                      alt="Dr. Kevin McLemore"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-                <div className="md:col-span-2">
-                  <h3 className="text-3xl font-bold text-white mb-2">Dr. Kevin McLemore</h3>
-                  <p className="text-gold text-lg font-semibold mb-4">Founder & CEO, Araceli Entertainment</p>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    With a visionary approach to entertainment and a commitment to affordability, Dr. Kevin McLemore founded Araceli Entertainment to create a platform where quality content meets accessible pricing. His philosophy believes that great entertainment should never be a luxury.
-                  </p>
-                  <div className="space-y-4 mb-6">
-                    <p className="text-gold italic text-lg">
-                      "Birth your dreams. Dreams are ordained to be."
-                    </p>
-                    <p className="text-gold italic text-lg">
-                      "Trust your pathway. Your tomorrow is built upon the preparation of today."
-                    </p>
-                  </div>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <a href="tel:630-994-0265" className="flex items-center gap-2 text-white hover:text-gold transition-colors">
-                      <Phone className="w-5 h-5" />
-                      <span>(630) 994-0265</span>
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=61587281891229" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-gold transition-colors">
-                      <span>Connect on Facebook</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20 border-b border-gray-800">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">
-              Why Choose Araceli?
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: 'Affordable Pricing',
-                  description: 'We offer premium streaming at a fraction of the cost of competitors, without compromising quality.',
-                },
-                {
-                  title: 'Flexible Subscription',
-                  description: 'Choose from freemium, ad-supported, or premium options. No long-term contracts.',
-                },
-                {
-                  title: 'Quality Content',
-                  description: 'Feature films and blockbuster productions curated for entertainment and inspiration.',
-                },
-                {
-                  title: 'Customer First',
-                  description: 'Our support team is dedicated to providing the best streaming experience for you.',
-                },
-                {
-                  title: 'Full Production House',
-                  description: 'We produce our own content, ensuring original and exclusive programming.',
-                },
-                {
-                  title: 'Accessible Entertainment',
-                  description: 'Available on all devices with flexible plans for every budget and preference.',
-                },
-              ].map((item, index) => (
-                <div key={index} className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-gold transition-colors">
-                  <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-gray-300">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20 bg-brand-darker border-t border-gray-800">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Get in Touch
-            </h2>
-            <p className="text-gray-300 mb-8 text-lg">
-              Have questions about Araceli? We'd love to hear from you. Reach out to Dr. Kevin McLemore or our support team.
-            </p>
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <a
-                href="tel:630-994-0265"
-                className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-gold transition-colors flex items-center justify-center gap-3"
-              >
-                <Phone className="w-6 h-6 text-gold" />
-                <div className="text-left">
-                  <p className="text-gray-400 text-sm">Call Us</p>
-                  <p className="text-white font-semibold">(630) 994-0265</p>
-                </div>
-              </a>
-              <a
-                href="mailto:Kmhomerglen@gmail.com"
-                className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-gold transition-colors flex items-center justify-center gap-3"
-              >
-                <Mail className="w-6 h-6 text-gold" />
-                <div className="text-left">
-                  <p className="text-gray-400 text-sm">Email</p>
-                  <p className="text-white font-semibold">Kmhomerglen@gmail.com</p>
-                </div>
-              </a>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {/* Bottom CTA Section */}
+        <section className="px-4 sm:px-6 lg:px-8 py-32 text-center space-y-12 bg-gradient-to-t from-brand-coral/5 to-transparent relative overflow-hidden">
+           <div className="space-y-4 relative z-10">
+              <h2 className="text-6xl font-serif text-white">
+                <span className="italic-gold">Your</span> Story Starts Here.
+              </h2>
+              <p className="text-gray-400 text-lg font-light max-w-xl mx-auto">
+                Stream blockbuster content. Support independent production. Start free today.
+              </p>
+           </div>
+           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
               <Link href="/pricing">
-                <Button className="bg-gold text-brand-dark hover:bg-gold-dark px-8 py-6 text-lg w-full sm:w-auto">
-                  Explore Plans
+                <Button className="bg-brand-coral hover:bg-brand-orange text-white px-10 h-14 text-xs font-black tracking-widest uppercase transition-all shadow-xl shadow-brand-coral/10">
+                  View Plans
                 </Button>
               </Link>
-              <a href="https://www.facebook.com/profile.php?id=61587281891229" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="outline"
-                  className="border-gold text-gold hover:bg-gold hover:text-brand-dark px-8 py-6 text-lg w-full sm:w-auto"
-                >
-                  Follow on Facebook
+              <Link href="/browse">
+                <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 px-10 h-14 text-xs font-black tracking-widest uppercase transition-all">
+                  Browse Content
                 </Button>
-              </a>
-            </div>
-          </div>
+              </Link>
+           </div>
         </section>
       </main>
 
