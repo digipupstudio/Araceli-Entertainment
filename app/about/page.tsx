@@ -34,11 +34,17 @@ export default function AboutPage() {
             {/* Left side: Graphic/Image stack */}
             <div className="relative">
               <div className="aspect-square bg-purple-900/30 rounded-sm relative overflow-hidden border border-white/5 shadow-2xl">
+                 <Image
+                    src="https://images.pexels.com/photos/32610376/pexels-photo-32610376.jpeg"
+                    alt="Production Studio"
+                    fill
+                    className="object-cover opacity-60"
+                 />
                  <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/40 to-transparent" />
                  <div className="absolute inset-0 flex items-center justify-center">
                    <div className="w-32 h-32 bg-black/40 backdrop-blur-xl border border-white/10 p-4 rounded-sm shadow-2xl flex items-center justify-center">
                       <Image
-                        src="/placeholder-logo.svg"
+                        src="https://images.pexels.com/photos/3266700/pexels-photo-3266700.jpeg"
                         alt="Araceli"
                         width={100}
                         height={100}
@@ -127,20 +133,27 @@ export default function AboutPage() {
 
              <div className="grid lg:grid-cols-12 gap-16 items-start">
                 <div className="lg:col-span-4 space-y-8">
-                   <div className="aspect-[4/5] bg-brand-dark border border-white/5 rounded-sm p-12 flex flex-col items-center justify-center text-center space-y-6 shadow-2xl relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent pointer-events-none" />
-                      <div className="w-24 h-24 rounded-full border-2 border-gold flex items-center justify-center text-gold font-serif text-3xl font-bold">
-                        KM
-                      </div>
-                      <div className="space-y-2">
-                        <h3 className="text-white text-xl font-bold tracking-tight">Dr. Kevin McLemore</h3>
-                        <p className="text-gold text-[10px] font-black tracking-widest uppercase">Founder & CEO</p>
-                      </div>
-                      <div className="space-y-2 pt-4">
-                        <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">Kmhomerglen@gmail.com</p>
-                        <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">(708) 982-8863</p>
-                        <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">630-994-0265</p>
-                        <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">Steger, Illinois</p>
+                   <div className="aspect-[4/5] bg-brand-dark border border-white/5 rounded-sm flex flex-col items-center justify-center text-center shadow-2xl relative overflow-hidden group">
+                      <Image
+                        src="https://images.pexels.com/photos/33290973/pexels-photo-33290973.jpeg"
+                        alt="Dr. Kevin McLemore"
+                        fill
+                        className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+
+                      <div className="relative z-10 p-8 space-y-4">
+                        <div className="w-16 h-16 rounded-full border border-gold/30 mx-auto flex items-center justify-center text-gold font-serif text-xl font-bold backdrop-blur-sm bg-black/20">
+                          KM
+                        </div>
+                        <div className="space-y-1">
+                          <h3 className="text-white text-xl font-bold tracking-tight">Dr. Kevin McLemore</h3>
+                          <p className="text-gold text-[10px] font-black tracking-widest uppercase">Founder & CEO</p>
+                        </div>
+                        <div className="space-y-1 pt-2 opacity-60">
+                          <p className="text-white text-[9px] font-bold tracking-widest uppercase truncate">Kmhomerglen@gmail.com</p>
+                          <p className="text-white text-[9px] font-bold tracking-widest uppercase">(708) 982-8863</p>
+                        </div>
                       </div>
                    </div>
                    <div className="flex gap-4">

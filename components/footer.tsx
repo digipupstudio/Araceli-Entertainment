@@ -15,7 +15,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3">
               <div className="bg-black p-1 rounded">
                 <Image
-                  src="/placeholder-logo.svg"
+                  src="https://images.pexels.com/photos/3266700/pexels-photo-3266700.jpeg"
                   alt="Araceli Entertainment"
                   width={40}
                   height={40}

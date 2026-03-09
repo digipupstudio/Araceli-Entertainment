@@ -6,19 +6,19 @@ import Image from 'next/image'
 
 interface Poster {
   title: string
-  color: string
+  image: string
 }
 
 const posters: Poster[] = [
-  { title: 'BROKEN CROWNS', color: 'bg-purple-900' },
-  { title: "OCEAN'S CODE", color: 'bg-blue-800' },
-  { title: 'RED DISTRICT', color: 'bg-red-900' },
-  { title: 'EMERALD CITY', color: 'bg-green-900' },
-  { title: 'GOLD DUST', color: 'bg-yellow-700' },
-  { title: 'VIOLET HOUR', color: 'bg-purple-800' },
-  { title: 'MIDNIGHT REIGN', color: 'bg-indigo-900' },
-  { title: 'EMBER FALLS', color: 'bg-orange-900' },
-  { title: 'TEAL STORM', color: 'bg-teal-900' },
+  { title: 'BROKEN CROWNS', image: 'https://images.pexels.com/photos/32694014/pexels-photo-32694014.jpeg' },
+  { title: "OCEAN'S CODE", image: 'https://images.pexels.com/photos/30704104/pexels-photo-30704104.jpeg' },
+  { title: 'RED DISTRICT', image: 'https://images.pexels.com/photos/13617992/pexels-photo-13617992.jpeg' },
+  { title: 'EMERALD CITY', image: 'https://images.pexels.com/photos/9695924/pexels-photo-9695924.jpeg' },
+  { title: 'GOLD DUST', image: 'https://images.pexels.com/photos/31361935/pexels-photo-31361935.jpeg' },
+  { title: 'VIOLET HOUR', image: 'https://images.pexels.com/photos/7651032/pexels-photo-7651032.jpeg' },
+  { title: 'MIDNIGHT REIGN', image: 'https://images.pexels.com/photos/7900581/pexels-photo-7900581.jpeg' },
+  { title: 'EMBER FALLS', image: 'https://images.pexels.com/photos/32610376/pexels-photo-32610376.jpeg' },
+  { title: 'TEAL STORM', image: 'https://images.pexels.com/photos/11320433/pexels-photo-11320433.jpeg' },
 ]
 
 export function HeroSection() {
@@ -88,8 +88,14 @@ export function HeroSection() {
           {posters.map((poster, idx) => (
             <div
               key={idx}
-              className={`group relative aspect-[2/3] rounded-sm overflow-hidden border border-white/5 transition-all duration-500 hover:scale-105 hover:border-gold/50 shadow-2xl ${poster.color} ${idx % 2 === 1 ? 'translate-y-8' : ''}`}
+              className={`group relative aspect-[2/3] rounded-sm overflow-hidden border border-white/5 transition-all duration-500 hover:scale-105 hover:border-gold/50 shadow-2xl bg-gray-900 ${idx % 2 === 1 ? 'translate-y-8' : ''}`}
             >
+              <Image
+                src={poster.image}
+                alt={poster.title}
+                fill
+                className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60" />
               <div className="absolute inset-0 flex items-end p-3">
                 <p className="text-[9px] font-bold text-white tracking-[0.2em] uppercase leading-tight truncate">
@@ -98,7 +104,6 @@ export function HeroSection() {
               </div>
             </div>
           ))}
-          {/* Decorative element (icon bottom right) matches screenshot but is also in left-side list above */}
         </div>
       </div>
     </div>

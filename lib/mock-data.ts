@@ -3,7 +3,7 @@ export const featuredContent = {
   title: 'The Last Kingdom',
   subtitle: 'An epic tale of power, honor, and destiny',
   description: 'Experience the dramatic conclusion of a legendary saga as heroes clash in a battle for ultimate supremacy.',
-  image: 'https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=1200&h=600&fit=crop',
+  image: 'https://images.pexels.com/photos/32694014/pexels-photo-32694014.jpeg',
   genre: 'Drama',
   year: 2024,
   rating: 'PG-13',
@@ -16,7 +16,7 @@ export const contentLibrary = [
     genre: 'Drama',
     rating: 'PG-13',
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=300&h=400&fit=crop',
+    image: 'https://images.pexels.com/photos/31361935/pexels-photo-31361935.jpeg',
     description: 'A royal family\'s secrets unravel in this compelling drama series.',
   },
   {
@@ -25,7 +25,7 @@ export const contentLibrary = [
     genre: 'Sci-Fi',
     rating: 'PG',
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1489599849228-ed4dc9ee47c3?w=300&h=400&fit=crop',
+    image: 'https://images.pexels.com/photos/7651032/pexels-photo-7651032.jpeg',
     description: 'Humanity\'s last hope lies in a desperate mission across the stars.',
   },
   {
@@ -34,7 +34,7 @@ export const contentLibrary = [
     genre: 'Thriller',
     rating: '16',
     year: 2023,
-    image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=300&h=400&fit=crop',
+    image: 'https://images.pexels.com/photos/13617992/pexels-photo-13617992.jpeg',
     description: 'A detective races against time to solve a baffling case.',
   },
   {
@@ -43,7 +43,7 @@ export const contentLibrary = [
     genre: 'Romance',
     rating: 'PG',
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=300&h=400&fit=crop',
+    image: 'https://images.pexels.com/photos/30704104/pexels-photo-30704104.jpeg',
     description: 'Two strangers meet in the City of Light and discover magic.',
   },
   {
@@ -52,7 +52,7 @@ export const contentLibrary = [
     genre: 'Adventure',
     rating: 'PG-13',
     year: 2023,
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=400&fit=crop',
+    image: 'https://images.pexels.com/photos/9695924/pexels-photo-9695924.jpeg',
     description: 'Explore untamed lands and discover civilizations long forgotten.',
   },
   {
@@ -61,7 +61,7 @@ export const contentLibrary = [
     genre: 'Sci-Fi Thriller',
     rating: '18',
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=300&h=400&fit=crop',
+    image: 'https://images.pexels.com/photos/7900581/pexels-photo-7900581.jpeg',
     description: 'In a cyberpunk world, a hacker uncovers a dangerous conspiracy.',
   },
   {
@@ -70,7 +70,7 @@ export const contentLibrary = [
     genre: 'Documentary',
     rating: 'G',
     year: 2023,
-    image: 'https://images.unsplash.com/photo-1482304160349-2da5c56762b7?w=300&h=400&fit=crop',
+    image: 'https://images.pexels.com/photos/32610376/pexels-photo-32610376.jpeg',
     description: 'Discover the mysteries hidden in history\'s greatest puzzles.',
   },
   {
@@ -79,7 +79,7 @@ export const contentLibrary = [
     genre: 'Comedy',
     rating: 'PG',
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1517604931442-7e0c6ed9c9c8?w=300&h=400&fit=crop',
+    image: 'https://images.pexels.com/photos/11320433/pexels-photo-11320433.jpeg',
     description: 'A hilarious journey through life\'s funniest moments.',
   },
 ]
