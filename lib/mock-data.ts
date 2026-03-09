@@ -1,0 +1,180 @@
+export const featuredContent = {
+  id: 'featured-1',
+  title: 'The Last Kingdom',
+  subtitle: 'An epic tale of power, honor, and destiny',
+  description: 'Experience the dramatic conclusion of a legendary saga as heroes clash in a battle for ultimate supremacy.',
+  image: 'https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=1200&h=600&fit=crop',
+  genre: 'Drama',
+  year: 2024,
+  rating: 'PG-13',
+}
+
+export const contentLibrary = [
+  {
+    id: '1',
+    title: 'The Crown Jewels',
+    genre: 'Drama',
+    rating: 'PG-13',
+    year: 2024,
+    image: 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=300&h=400&fit=crop',
+    description: 'A royal family\'s secrets unravel in this compelling drama series.',
+  },
+  {
+    id: '2',
+    title: 'Echoes of Tomorrow',
+    genre: 'Sci-Fi',
+    rating: 'PG',
+    year: 2024,
+    image: 'https://images.unsplash.com/photo-1489599849228-ed4dc9ee47c3?w=300&h=400&fit=crop',
+    description: 'Humanity\'s last hope lies in a desperate mission across the stars.',
+  },
+  {
+    id: '3',
+    title: 'Midnight Mystery',
+    genre: 'Thriller',
+    rating: '16',
+    year: 2023,
+    image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=300&h=400&fit=crop',
+    description: 'A detective races against time to solve a baffling case.',
+  },
+  {
+    id: '4',
+    title: 'Love in Paris',
+    genre: 'Romance',
+    rating: 'PG',
+    year: 2024,
+    image: 'https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=300&h=400&fit=crop',
+    description: 'Two strangers meet in the City of Light and discover magic.',
+  },
+  {
+    id: '5',
+    title: 'Wild Frontiers',
+    genre: 'Adventure',
+    rating: 'PG-13',
+    year: 2023,
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=400&fit=crop',
+    description: 'Explore untamed lands and discover civilizations long forgotten.',
+  },
+  {
+    id: '6',
+    title: 'Digital Noir',
+    genre: 'Sci-Fi Thriller',
+    rating: '18',
+    year: 2024,
+    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=300&h=400&fit=crop',
+    description: 'In a cyberpunk world, a hacker uncovers a dangerous conspiracy.',
+  },
+  {
+    id: '7',
+    title: 'Ancient Codes',
+    genre: 'Documentary',
+    rating: 'G',
+    year: 2023,
+    image: 'https://images.unsplash.com/photo-1482304160349-2da5c56762b7?w=300&h=400&fit=crop',
+    description: 'Discover the mysteries hidden in history\'s greatest puzzles.',
+  },
+  {
+    id: '8',
+    title: 'Laugh Track',
+    genre: 'Comedy',
+    rating: 'PG',
+    year: 2024,
+    image: 'https://images.unsplash.com/photo-1517604931442-7e0c6ed9c9c8?w=300&h=400&fit=crop',
+    description: 'A hilarious journey through life\'s funniest moments.',
+  },
+]
+
+export const pricingPlans = [
+  {
+    id: 'free',
+    name: 'Freemium',
+    price: 'Free',
+    description: 'Enjoy quality entertainment with ads',
+    features: [
+      'Unlimited streaming with ads',
+      'HD (720p) quality',
+      'Standard definition on 1 device',
+      'Ad-supported scheduled programming',
+      'Limited content library',
+    ],
+    cta: 'Start Watching',
+    highlighted: false,
+  },
+  {
+    id: 'standard',
+    name: 'Standard',
+    price: '$5.99',
+    priceDescription: '/month',
+    description: 'Ad-supported premium streaming',
+    features: [
+      'Watch on 2 devices at once',
+      'Full HD (1080p) quality',
+      'Ad-supported content',
+      'Full content library access',
+      'Offline downloads',
+      'Cancel anytime',
+    ],
+    cta: 'Subscribe Now',
+    highlighted: true,
+  },
+  {
+    id: 'premium',
+    name: 'Premium',
+    price: '$9.99',
+    priceDescription: '/month',
+    description: 'Ad-free ultimate entertainment',
+    features: [
+      'Watch on 4 devices simultaneously',
+      '4K Ultra HD quality',
+      'Ad-free streaming',
+      'Full content library access',
+      'Offline downloads',
+      'Family sharing (5 profiles)',
+      'Priority customer support',
+      'Early access to new content',
+    ],
+    cta: 'Subscribe Now',
+    highlighted: false,
+  },
+]
+
+export const testimonials = [
+  {
+    name: 'Sarah M.',
+    text: 'Araceli offers amazing content at prices that actually make sense. I\'ve cancelled all my other subscriptions!',
+  },
+  {
+    name: 'James T.',
+    text: 'The variety and quality of shows is incredible. Best streaming service I\'ve found.',
+  },
+  {
+    name: 'Maria L.',
+    text: 'Finally, a service that values both quality content and affordable pricing. Highly recommend!',
+  },
+]
+
+export const footerLinks = {
+  company: [
+    { label: 'About Us', href: '/about' },
+    { label: 'Careers', href: '#' },
+    { label: 'Press', href: '#' },
+    { label: 'Blog', href: '#' },
+  ],
+  support: [
+    { label: 'Help Center', href: '#' },
+    { label: 'Contact Us', href: '#' },
+    { label: 'Account Settings', href: '#' },
+    { label: 'Devices', href: '#' },
+  ],
+  legal: [
+    { label: 'Privacy Policy', href: '#' },
+    { label: 'Terms of Service', href: '#' },
+    { label: 'Cookie Preferences', href: '#' },
+  ],
+  connect: [
+    { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61587281891229' },
+    { label: 'Twitter', href: '#' },
+    { label: 'Instagram', href: '#' },
+    { label: 'YouTube', href: '#' },
+  ],
+}
