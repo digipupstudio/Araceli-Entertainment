@@ -2,113 +2,101 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { footerLinks } from '@/lib/mock-data'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-brand-darker border-t border-gray-800 mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Footer Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-          {/* Logo Column */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <Image
-                src="/placeholder-logo.svg"
-                alt="Araceli Entertainment"
-                width={32}
-                height={32}
-                className="w-8 h-8"
-              />
-              <span className="text-gold font-semibold">Araceli</span>
-            </div>
-            <p className="text-gray-400 text-sm">
-              Quality entertainment at affordable prices.
+    <footer className="bg-black border-t border-white/5 pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+          {/* Brand Info */}
+          <div className="space-y-6">
+            <Link href="/" className="flex items-center gap-3">
+              <div className="bg-black p-1 rounded">
+                <Image
+                  src="/placeholder-logo.svg"
+                  alt="Araceli Entertainment"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10"
+                />
+              </div>
+              <span className="text-white font-serif font-bold text-lg tracking-wide uppercase">Araceli</span>
+            </Link>
+            <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+              A full-service production and streaming platform. We create blockbuster feature films
+              and original content — at a price everyone can access.
             </p>
           </div>
 
-          {/* Company Links */}
+          {/* Navigate Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-gold transition-colors text-sm"
-                  >
-                    {link.label}
+            <h3 className="text-gold text-[10px] font-black tracking-[0.2em] uppercase mb-8">Navigate</h3>
+            <ul className="space-y-4">
+              {['Home', 'Browse', 'Plans & Pricing', 'About Us'].map((item) => (
+                <li key={item}>
+                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {item}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Support Links */}
+          {/* Plans Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Support</h3>
-            <ul className="space-y-2">
-              {footerLinks.support.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-gold transition-colors text-sm"
-                  >
-                    {link.label}
+            <h3 className="text-gold text-[10px] font-black tracking-[0.2em] uppercase mb-8">Plans</h3>
+            <ul className="space-y-4">
+              {['Freemium (Free)', 'Ad-Supported', 'Premium Subscription', 'Gift Cards'].map((item) => (
+                <li key={item}>
+                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {item}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Legal Links */}
+          {/* Contact Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-gold transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Connect</h3>
-            <ul className="space-y-2">
-              {footerLinks.connect.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-gold transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <h3 className="text-gold text-[10px] font-black tracking-[0.2em] uppercase mb-8">Contact</h3>
+            <ul className="space-y-4">
+              <li>
+                <a href="mailto:Kmhomerglen@gmail.com" className="text-gray-400 hover:text-white transition-colors text-sm block truncate">
+                  Kmhomerglen@gmail.com
+                </a>
+              </li>
+              <li className="text-gray-400 text-sm">(708) 982-8863</li>
+              <li className="text-gray-400 text-sm">Steger, Illinois</li>
+              <li>
+                <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2">
+                  Facebook <span className="text-[10px]">→</span>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
-            &copy; {currentYear} Araceli Entertainment. All rights reserved.
+        <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
+          <p className="text-gray-600 text-[10px] font-bold tracking-widest uppercase">
+            © {currentYear} Araceli Entertainment. All rights reserved.
           </p>
-          <p className="text-gray-500 text-sm mt-4 md:mt-0 text-center">
-            <span className="text-gold italic">"Birth your dreams. Dreams are ordained to be."</span>
-            <br />
-            <span className="text-xs">— Dr. Kevin McLemore</span>
+
+          <div className="flex gap-6">
+            {['Privacy', 'Terms', 'Accessibility'].map((item) => (
+              <Link key={item} href="#" className="text-gray-600 hover:text-white transition-colors text-[10px] font-bold tracking-widest uppercase">
+                {item}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Tagline Quote */}
+        <div className="mt-12 text-center opacity-30">
+          <p className="text-gold font-serif italic text-sm">
+            "Birth your dreams. Dreams are ordained to be."
           </p>
         </div>
       </div>

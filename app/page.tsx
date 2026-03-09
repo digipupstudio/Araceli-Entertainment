@@ -3,159 +3,108 @@ import { Footer } from '@/components/footer'
 import { HeroSection } from '@/components/hero-section'
 import { ContentCard } from '@/components/content-card'
 import { Button } from '@/components/ui/button'
-import { featuredContent, contentLibrary, testimonials } from '@/lib/mock-data'
+import { ScrollingMarquee } from '@/components/scrolling-marquee'
+import { contentLibrary } from '@/lib/mock-data'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 export default function Home() {
-  const trendingContent = contentLibrary.slice(0, 6)
+  const originals = contentLibrary.slice(0, 5)
+  const trending = contentLibrary.slice(3, 8)
 
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen bg-black">
       <Header />
 
       <main>
         {/* Hero Section */}
-        <section className="px-4 sm:px-6 lg:px-8 pt-8 pb-20">
+        <HeroSection />
+
+        {/* Marquee Banner */}
+        <ScrollingMarquee />
+
+        {/* Araceli Originals Section */}
+        <section className="px-4 sm:px-6 lg:px-8 py-24 bg-black">
           <div className="max-w-7xl mx-auto">
-            <HeroSection
-              title={featuredContent.title}
-              subtitle={featuredContent.subtitle}
-              description={featuredContent.description}
-              backgroundImage={featuredContent.image}
-            />
+            <div className="flex items-center justify-between mb-12">
+              <h2 className="text-3xl sm:text-4xl font-serif text-white">
+                Araceli <span className="italic-gold">Originals</span>
+              </h2>
+              <Link href="/browse" className="text-xs font-bold text-gray-400 hover:text-gold tracking-widest uppercase transition-all flex items-center gap-2">
+                See All
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+              {originals.map((content) => (
+                <ContentCard key={content.id} {...content} />
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Trending Now Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-b from-brand-dark to-brand-darker">
+        <section className="px-4 sm:px-6 lg:px-8 py-24 bg-black border-t border-white/5">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">Trending Now</h2>
-                <p className="text-gold text-sm">Discover what's popular on Araceli</p>
-              </div>
-              <Link href="/browse">
-                <Button
-                  variant="outline"
-                  className="border-gold text-gold hover:bg-gold hover:text-brand-dark hidden sm:flex gap-2"
-                >
-                  View All
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
+              <h2 className="text-3xl sm:text-4xl font-serif text-white">
+                Trending <span className="italic-gold">Now</span>
+              </h2>
+              <Link href="/browse" className="text-xs font-bold text-gray-400 hover:text-gold tracking-widest uppercase transition-all flex items-center gap-2">
+                See All
+                <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {trendingContent.map((content) => (
+            {/* Genre Filters (Simplified representation from screenshot 3) */}
+            <div className="flex flex-wrap gap-3 mb-12">
+              {['ALL', 'DRAMA', 'ACTION', 'THRILLER', 'DOCUMENTARY', 'COMEDY', 'SCI-FI'].map((genre) => (
+                <button
+                  key={genre}
+                  className={`px-4 py-1.5 text-[10px] font-bold tracking-widest uppercase border transition-all ${
+                    genre === 'ALL' ? 'border-gold text-gold' : 'border-white/10 text-gray-500 hover:border-white/30 hover:text-white'
+                  }`}
+                >
+                  {genre}
+                </button>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+              {trending.map((content) => (
                 <ContentCard key={content.id} {...content} />
               ))}
             </div>
+          </div>
+        </section>
 
-            <div className="mt-8 text-center sm:hidden">
-              <Link href="/browse">
-                <Button className="bg-gold text-brand-dark hover:bg-gold-dark">
-                  View All Content
+        {/* CTA Section (Ready to Stream Smarter?) */}
+        <section className="px-4 sm:px-6 lg:px-8 py-32 relative overflow-hidden">
+          {/* Subtle radial glow background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-coral/5 to-transparent" />
+
+          <div className="max-w-4xl mx-auto text-center relative z-10 space-y-10">
+            <div className="space-y-4">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-serif text-white leading-tight">
+                Ready to <span className="italic-gold">Stream Smarter?</span>
+              </h2>
+              <p className="text-gray-400 text-lg sm:text-xl font-light max-w-2xl mx-auto">
+                Premium blockbuster content at a price that actually makes sense.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/pricing">
+                <Button className="bg-gold hover:bg-gold-dark text-black px-10 h-14 text-xs font-bold tracking-widest uppercase transition-all shadow-xl shadow-gold/10">
+                  See Our Plans
                 </Button>
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Araceli Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">
-              Why Choose Araceli?
-            </h2>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 hover:border-gold transition-colors">
-                <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-brand-dark font-bold text-xl">$</span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Affordable Pricing</h3>
-                <p className="text-gray-400">
-                  Premium entertainment at a fraction of the cost. From free ad-supported to premium, we have a plan for everyone.
-                </p>
-              </div>
-
-              <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 hover:border-gold transition-colors">
-                <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-brand-dark font-bold text-xl">🎬</span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Quality Content</h3>
-                <p className="text-gray-400">
-                  Curated selection of feature films and blockbuster streaming content that entertains and inspires.
-                </p>
-              </div>
-
-              <div className="bg-gray-900 border border-gray-800 rounded-lg p-8 hover:border-gold transition-colors">
-                <div className="w-12 h-12 bg-gold rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-brand-dark font-bold text-xl">⚡</span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Flexible Plans</h3>
-                <p className="text-gray-400">
-                  Choose ad-free streaming, ad-supported, or freemium with scheduled programming that suits your needs.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20 bg-brand-darker border-t border-gray-800">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">
-              What Our Users Say
-            </h2>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-900 border border-gray-800 rounded-lg p-8 hover:border-gold transition-colors"
-                >
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-gold text-lg">
-                        ★
-                      </span>
-                    ))}
-                  </div>
-                  <p className="text-gray-300 italic mb-4">"{testimonial.text}"</p>
-                  <p className="text-gold font-semibold">{testimonial.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-gradient-to-r from-gold/10 to-gold/5 border border-gold/30 rounded-xl p-12 text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                Ready to Join Araceli?
-              </h2>
-              <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                Start watching your favorite content today. Choose from our flexible subscription plans or enjoy our freemium option.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/pricing">
-                  <Button className="bg-gold text-brand-dark hover:bg-gold-dark px-8 py-6 text-lg">
-                    Explore Plans
-                  </Button>
-                </Link>
-                <Link href="/browse">
-                  <Button
-                    variant="outline"
-                    className="border-gold text-gold hover:bg-gold hover:text-brand-dark px-8 py-6 text-lg"
-                  >
-                    Browse Content
-                  </Button>
-                </Link>
-              </div>
+              <Link href="/browse">
+                <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 px-10 h-14 text-xs font-bold tracking-widest uppercase transition-all">
+                  Browse Free Content
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
