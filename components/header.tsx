@@ -12,7 +12,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <Image
-              src="/araceli-logo.png"
+              src="/placeholder-logo.svg"
               alt="Araceli Entertainment"
               width={40}
               height={40}
