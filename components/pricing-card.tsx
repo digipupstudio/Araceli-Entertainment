@@ -1,6 +1,5 @@
 'use client'
 
-import { Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 interface PricingCardProps {
@@ -24,49 +23,52 @@ export function PricingCard({
 }: PricingCardProps) {
   return (
     <div
-      className={`relative rounded-xl border transition-all duration-300 ${
+      className={`relative rounded-sm border transition-all duration-500 flex flex-col h-full ${
         highlighted
-          ? 'border-gold bg-brand-dark shadow-lg shadow-gold/20 scale-105'
-          : 'border-gray-700 bg-gray-900 hover:border-gray-600'
-      } p-8 flex flex-col`}
+          ? 'border-gold bg-white/5 shadow-2xl shadow-gold/5 scale-105 z-10'
+          : 'border-white/5 bg-white/[0.02] hover:border-white/20'
+      } p-10`}
     >
       {highlighted && (
-        <div className="absolute top-0 right-0 bg-gold text-brand-dark text-xs font-bold px-3 py-1 rounded-bl-lg">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-black text-[10px] font-black px-4 py-1.5 tracking-[0.2em] uppercase rounded-sm whitespace-nowrap">
           MOST POPULAR
         </div>
       )}
 
-      <div className="mb-8">
-        <h3 className="text-2xl font-bold text-white mb-2">{name}</h3>
-        <p className="text-gray-400 text-sm mb-4">{description}</p>
-        <div className="flex items-baseline gap-1">
-          <span className={`text-4xl font-bold ${highlighted ? 'text-gold' : 'text-white'}`}>
-            {price}
+      <div className="mb-12 space-y-4">
+        <p className="text-gold text-[10px] font-black tracking-[0.2em] uppercase">
+          {name}
+        </p>
+        <div className="flex items-baseline gap-2">
+          <span className="text-white text-xs font-bold">$</span>
+          <span className="text-6xl font-serif text-white tracking-tighter">
+            {price.replace('$', '')}
           </span>
           {priceDescription && (
-            <span className="text-gray-400 text-sm">{priceDescription}</span>
+            <span className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">{priceDescription}</span>
           )}
         </div>
+        <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">{description}</p>
+      </div>
+
+      <div className="space-y-4 mb-16 flex-grow">
+        {features.map((feature, index) => (
+          <div key={index} className="flex items-center gap-3 py-3 border-b border-white/5 last:border-0">
+            <span className="h-1 w-1 bg-gold rotate-45 flex-shrink-0" />
+            <span className="text-gray-400 text-[11px] font-medium tracking-wide uppercase">{feature}</span>
+          </div>
+        ))}
       </div>
 
       <Button
-        className={`w-full mb-8 transition-all ${
+        className={`w-full h-14 text-[10px] font-black tracking-[0.2em] uppercase transition-all rounded-sm ${
           highlighted
-            ? 'bg-gold text-brand-dark hover:bg-gold-dark'
-            : 'bg-gray-800 text-white hover:bg-gray-700'
+            ? 'bg-gold text-black hover:bg-gold-dark'
+            : name === 'Premium' ? 'bg-brand-coral hover:bg-brand-orange text-white' : 'bg-white/5 border border-white/10 text-white hover:bg-white/10'
         }`}
       >
         {cta}
       </Button>
-
-      <div className="space-y-4 flex-grow">
-        {features.map((feature, index) => (
-          <div key={index} className="flex items-start gap-3">
-            <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${highlighted ? 'text-gold' : 'text-gray-400'}`} />
-            <span className="text-gray-300 text-sm">{feature}</span>
-          </div>
-        ))}
-      </div>
     </div>
   )
 }

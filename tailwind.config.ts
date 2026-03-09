@@ -17,12 +17,14 @@ const config = {
       colors: {
         'gold': '#D4AF37',
         'gold-dark': '#AA8C2C',
-        'brand-dark': '#1a1a1a',
-        'brand-darker': '#0f0f0f',
+        'brand-dark': '#000000',
+        'brand-darker': '#050505',
+        'brand-coral': '#F4511E',
+        'brand-orange': '#E85D07',
       },
       backgroundColor: {
-        'primary': '#1a1a1a',
-        'secondary': '#2a2a2a',
+        'primary': '#000000',
+        'secondary': '#121212',
         'accent': '#D4AF37',
       },
       textColor: {
